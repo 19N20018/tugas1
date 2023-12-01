@@ -39,7 +39,7 @@ func load_textures(file_paths: Array, probabilities: Array) -> Array:
 	var textures: Array = []
 	for i in range(file_paths.size()):
 		var texture = ResourceLoader.load(file_paths[i])
-		for j in range(int(probabilities[i] * 100)):  # Adjust the factor for more precision
+		for j in range(int(probabilities[i] * 100)): 
 			textures.append(texture)
 	return textures
 
