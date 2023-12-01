@@ -21,8 +21,8 @@ func _ready():
 	very_rare_textures = load_textures(["res://Weapon/Weapon - 01 (Front).jpg", "res://Weapon/Weapon - 02 (Front).jpg", 
 		"res://Weapon/Weapon - 03 (Front).jpg", "res://Weapon/Weapon - 04 (Front).jpg", "res://Weapon/Weapon - 05 (Front).jpg"],
 		[0.2, 0.2, 0.2, 0.1, 0.3])
-	ultra_rare_textures = load_textures(["res://Encounter/Encounter - 01 (Front).jpg"],
-		[1.0])
+	ultra_rare_textures = load_textures(["res://Encounter/Encounter - 01 (Front).jpg"],["res://Encounter/Encounter - 02 (Front).jpg"],
+		[0.5, 0.5])
 
 func _process(_delta):
 	pass
