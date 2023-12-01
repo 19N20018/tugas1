@@ -2,7 +2,8 @@ extends Button
 
 var roll_results: Array
 
-# Define textures for different rarity types
+# Define textures for different rarity types#
+
 var common_textures: Array
 var rare_textures: Array
 var very_rare_textures: Array
@@ -13,10 +14,12 @@ const RARE_PROBABILITY = 0.8
 const VERY_RARE_PROBABILITY = 0.95
 
 func _ready():
-	# Find and store TextureRect elements
+	# Find and store TextureRect elements#
+ 
 	roll_results = [$RollResult1, $RollResult2, $RollResult3]
 
-	# Define items and their corresponding probabilities
+	# Define items and their corresponding probabilities#
+ 
 	common_textures = load_textures(["res://Item/Item - 01 (Front).jpg", "res://Item/Item - 02 (Front).jpg", 
 		"res://Item/Item - 03 (Front).jpg", "res://Item/Item - 07 (Front).jpg", "res://Item/Item - 12 (Front).jpg"],
 		[0.2, 0.2, 0.2, 0.2, 0.2])  # Adjust probabilities accordingly
@@ -38,20 +41,25 @@ func _process(_delta):
 func _on_pressed():
 	print("Button Pressed!")
 
-	# Display the results on TextureRect elements
+	# Display the results on TextureRect elements#
+ 
 	for i in range(3):
 		var random_rarity_number = randf()  # Generate a random number between 0 and 1 for rarity
 
-		# Determine the rarity based on the random number
+		# Determine the rarity based on the random number#
+  
 		var rarity = match_random_number_to_rarity(random_rarity_number)
 
-		# Select a random item from the appropriate list based on rarity
+		# Select a random item from the appropriate list based on rarity#
+  
 		var selected_texture = match_rarity_to_texture(rarity)
 
-		# Set the TextureRect texture
+		# Set the TextureRect texture#
+  
 		roll_results[i].texture = selected_texture
 
-# Function to match a random number to a rarity type
+# Function to match a random number to a rarity type#
+
 func load_textures(file_paths: Array, probabilities: Array) -> Array:
 	var textures: Array = []
 	for i in range(file_paths.size()):
